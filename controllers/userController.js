@@ -1,4 +1,4 @@
-const User = require('../models/userModel');
+const User = require('../models/User');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 // User registration
@@ -35,7 +35,7 @@ exports.loginUser = async (req, res) => {
       return res.status(401).json({ message: 'Invalid username or password' });
     }
     // Generate a JSON Web Token (JWT)
-    const token = jwt.sign({ username: existingUser.username }, 'your-secret-key', { expiresIn: '1h' });
+    const token = jwt.sign({ username: existingUser.username }, '6c11481510042779354b86ff15590801275b1fc5519e594f4e41f59449708273', { expiresIn: '1h' });
     return res.status(200).json({ token });
   } catch (error) {
     return res.status(500).json({ message: 'Internal server error' });

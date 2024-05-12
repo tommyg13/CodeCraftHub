@@ -3,9 +3,9 @@ const router = express.Router();
 const userController = require('../controllers/userController');
 
 // Define user routes
-router.post('/users', userController.createUser);
-router.get('/users/:id', userController.getUserById);
+router.post('/register', userController.registerUser);
+router.post('/login', userController.loginUser);
+router.put('/:username', userController.updateUserProfile);
 
-// Add other user-related routes as needed
 
 module.exports = router;
